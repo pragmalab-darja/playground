@@ -1,0 +1,68 @@
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+html {
+  background-color: #ddd;
+  background-image: -moz-linear-gradient(center top, #aaa, #ddd);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aaa), color-stop(1, #ddd));
+  background-image: linear-gradient(top, #aaa, #ddd);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaaaaa', EndColorStr = '#dddddd');
+  background-repeat: no-repeat;
+  height: 100%;
+/* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-color: #FFFFFF;
+  background-attachment: scroll;
+  background-image: none;
+  background-position: 0px 0px;
+  background-repeat: repeat;
+  background-size: auto auto;
+  color: #33333;
+}
+
+.ct-body {
+  padding-top: 40px;
+  margin: 0 auto;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+//  max-width: 960px;
+  box-shadow: 0 0 0.3em #255B17;
+}
+
+.plt-header-fix {
+  margin-top: 4em;
+}
+
+.plt-footer-fix {
+  padding-bottom: 18px;
+  margin-bottom: 1em;
+  margin-top: -1em;
+
+}
+
+#header {
+  //background-color: #cccccc;
+}
+
+th.sortable a {
+  background-position: right;
+  background-repeat: no-repeat;
+  padding-right: 1.1em;
+}
+
+th.asc a {
+  background-image: url(../images/skin/sorted_asc.gif);
+}
+
+th.desc a {
+  background-image: url(../images/skin/sorted_desc.gif);
+}

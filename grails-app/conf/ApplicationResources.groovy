@@ -15,5 +15,9 @@ modules = {
         resource url:[dir: 'less', file: 'custom-bootstrap.less'], attrs:[rel: "stylesheet/less", type:'css']
     }
 
+    'playground-css' {
+        dependsOn 'custom-bootstrap'
+        resource url:[dir: 'less', file: 'playground.less'], attrs:[rel: "stylesheet/less", type:'css']
+    }
 }
 

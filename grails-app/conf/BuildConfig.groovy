@@ -49,8 +49,10 @@ grails.project.dependency.resolution = {
         runtime ":jquery:1.8.3"
         runtime ":resources:1.1.6"
 
-        runtime ":twitter-bootstrap:2.3.0"
 
+
+
+        runtime ":twitter-bootstrap:2.2.2"
         runtime (":less-resources:1.3.0.2") {
             excludes 'svn'
         }

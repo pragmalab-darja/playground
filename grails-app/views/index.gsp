@@ -81,42 +81,89 @@
 		</style>
 	</head>
 	<body>
-		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${GroovySystem.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
-		</div>
-		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
-		</div>
+    <!-- DIMA: example for tab nav -->
+
+    <ul class="nav nav-tabs">
+        <li><a href="#home" data-toggle="tab">Asset #42345 <i class="icon-remove-circle"></i></a></li>
+        <li class="active"><a href="#profile" data-toggle="tab">Assets <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
+        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
+    </ul>
+
+    <!-- DIMA: example for collapsible div -->
+
+    <div class="accordion" id="search_panel">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#search_panel" href="#collapse_search">
+                    <i id="icon_search"  class="icon-circle-arrow-down"></i> Asset search
+                </a>
+            </div>
+            <div id="collapse_search" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    Search
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion" id="panel_list">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_list" href="#collapse_list">
+                    <i id="icon_list"  class="icon-circle-arrow-down"></i> Asset list
+                </a>
+            </div>
+            <div id="collapse_list" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    Listing
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion" id="panel_details">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_details" href="#collapse_details">
+                    <i id="icon_details"  class="icon-circle-arrow-down"></i> Asset details
+                </a>
+            </div>
+            <div id="collapse_details" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    Details
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion" id="panel_history">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_history" href="#collapse_history">
+                    <i id="icon_history"  class="icon-circle-arrow-down"></i> Asset history
+                </a>
+            </div>
+            <div id="collapse_history" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                    History
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 	</body>
 </html>
