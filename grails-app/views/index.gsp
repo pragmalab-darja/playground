@@ -13,7 +13,7 @@
 				float: left;
 				-moz-box-shadow: 0px 0px 1.25em #ccc;
 				-webkit-box-shadow: 0px 0px 1.25em #ccc;
-				box-shadow: 0px 0px 1.25em #ccc;
+				box-shadow: 1px 0px 1.25em #ccc;
 				-moz-border-radius: 0.6em;
 				-webkit-border-radius: 0.6em;
 				border-radius: 0.6em;
@@ -106,7 +106,6 @@
     </ul>
 
     <!-- DIMA: example for collapsible div -->
-
     <div class="accordion" id="search_panel">
         <div class="accordion-group">
             <div class="accordion-heading">
@@ -116,7 +115,9 @@
             </div>
             <div id="collapse_search" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    Search
+
+                    <!-- DIMA: insert here PLAYGROUND navbar -->
+                    <g:render template="/playground_search" />
                 </div>
             </div>
         </div>
