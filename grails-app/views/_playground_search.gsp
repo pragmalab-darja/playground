@@ -8,7 +8,7 @@
             <fieldset>
                 <label>Searched object</label>
                 <select>
-                    <option>Asset</option>
+                    <option>${referenced_object}</option>
                     <option>Contact</option>
                     <option>Bucket</option>
                 </select>
@@ -33,7 +33,7 @@
             </select>
             <select class="span2">
                 <option>Asset</option>
-                <option selected="">Contact</option>
+                <option class="active">Contact</option>
                 <option>Bucket</option>
             </select>
             <select class="span2">
@@ -54,7 +54,7 @@
             </select>
             <select class="span2">
                 <option>Asset</option>
-                <option selected="">Contact</option>
+                <option class="active">Contact</option>
                 <option>Bucket</option>
             </select>
             <select class="span2">

@@ -82,35 +82,13 @@
 	</head>
 	<body>
 
-    <!-- DIMA: example for tab nav -->
-
-    <ul class="nav nav-tabs">
-        <li><a href="#home" data-toggle="tab">Asset #42345 <i class="icon-remove-circle"></i></a></li>
-        <li class="active"><a href="#profile" data-toggle="tab">Assets <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#messages" data-toggle="tab">CP #42356 <i class="icon-remove-circle"></i></a></li>
-        <li><a href="#settings" data-toggle="tab">Contacts <i class="icon-remove-circle"></i></a></li>
-    </ul>
-
+    <g:render template="/playground_tabs"/>
     <!-- DIMA: example for collapsible div -->
     <div class="accordion" id="search_panel">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#search_panel" href="#collapse_search">
-                    <i id="icon_search"  class="icon-circle-arrow-down"></i> Asset search
+                    <i id="icon_search"  class="icon-circle-arrow-down"></i> ${referenced_object} search
                 </a>
             </div>
             <div id="collapse_search" class="accordion-body collapse in">
@@ -122,16 +100,26 @@
             </div>
         </div>
     </div>
+
     <div class="accordion" id="panel_list">
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_list" href="#collapse_list">
-                    <i id="icon_list"  class="icon-circle-arrow-down"></i> Asset list
+                    <i id="icon_list"  class="icon-circle-arrow-down"></i> ${referenced_object} list
                 </a>
             </div>
             <div id="collapse_list" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    Listing
+
+                    <g:if test="${referenced_object == 'bucket'}">
+
+                    <g:render template="/buckets_list" />
+
+                    </g:if>
+
+                    <g:if test="${referenced_object != 'bucket'}">
+                      list
+                    </g:if>
                 </div>
             </div>
         </div>
@@ -140,31 +128,61 @@
         <div class="accordion-group">
             <div class="accordion-heading">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_details" href="#collapse_details">
-                    <i id="icon_details"  class="icon-circle-arrow-down"></i> Asset details
+                    <i id="icon_details"  class="icon-circle-arrow-down"></i> ${referenced_object} details
                 </a>
             </div>
             <div id="collapse_details" class="accordion-body collapse in">
                 <div class="accordion-inner">
-                    Details
+                    <g:if test="${referenced_object == 'bucket'}">
+
+                        <g:render template="/buckets_details" />
+
+                    </g:if>
+
+                    <g:if test="${referenced_object != 'bucket'}">
+                        details
+                    </g:if>
                 </div>
             </div>
         </div>
     </div>
-    <div class="accordion" id="panel_history">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_history" href="#collapse_history">
-                    <i id="icon_history"  class="icon-circle-arrow-down"></i> Asset history
-                </a>
-            </div>
-            <div id="collapse_history" class="accordion-body collapse in">
-                <div class="accordion-inner">
-                    History
+    <g:if test="${referenced_object == 'bucket'}">
+        <div class="accordion" id="panel_details">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_details" href="#collapse_bucketresults">
+                        <i id="icon_details"  class="icon-circle-arrow-down"></i> ${referenced_object} selection
+                    </a>
+                </div>
+                <div id="collapse_bucketresults" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        <g:if test="${referenced_object == 'bucket'}">
+
+                            <g:render template="/buckets_selection" />
+
+                        </g:if>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
+    </g:if>
+    <g:if test="${referenced_object != 'bucket'}">
+        <div class="accordion" id="panel_history">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#panel_history" href="#collapse_history">
+                        <i id="icon_history"  class="icon-circle-arrow-down"></i> ${referenced_object} history
+                    </a>
+                </div>
+                <div id="collapse_history" class="accordion-body collapse in">
+                    <div class="accordion-inner">
+                        ${referenced_object} history
+                    </div>
+                </div>
+            </div>
+        </div>
+    </g:if>
 	</body>
 </html>

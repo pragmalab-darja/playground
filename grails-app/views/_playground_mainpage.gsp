@@ -11,15 +11,12 @@
         </div>
         <div class="span10">
             <header id="header">
-                <p class="pull-right">here will be login etc.</p>
+                <p class="pull-right">here will be login etc. </p>
             </header>
-            <hr/>
+            <hr/>                                              -
             <g:layoutBody/>
         </div>
     </div>
-    <hr/>
-    <footer class="plt-footer-fix">
-        <a href="http://pragmalab.net" class="pull-right">Pragmalab Developer Group</a>
-    </footer>
+    <g:render template="/playground_footer"/>
 </div>
 
